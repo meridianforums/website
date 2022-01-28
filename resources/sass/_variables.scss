@@ -1,0 +1,59 @@
+// Body
+$body-background-color: #fff;
+$body-color: #333;
+
+// Nav
+$logo-text-color: #454545;
+
+
+// Colours
+$primary-color: #D81159;
+$secondary-color: #2E294E;
+
+// Buttons
+$button-primary-background-color: $primary-color;
+$button-primary-color: #fff;
+$button-primary-border-color: $primary-color;
+$button-primary-hover-background-color: darken($primary-color, 5%);
+$button-primary-hover-color: #fff;
+$button-primary-hover-border-color: darken($primary-color, 5%);
+
+$button-secondary-background-color: #fff;
+$button-secondary-color: $body-color;
+$button-secondary-border-color: #e4e4e4;
+$button-secondary-hover-background-color: darken($primary-color, 5%);
+$button-secondary-hover-color: #fff;
+$button-secondary-hover-border-color: darken($secondary-color, 5%);
+
+// Wrapper
+$wrapper-width: 100%;
+$wrapper-padding: 5px;
+$wrapper-max-width: 400px;
+$wrapper-margin: 0 auto;
+
+$wrapper-large-breakpoint-width: 100%;
+$wrapper-large-breakpoint-max-width: 920px;
+$wrapper-large-breakpoint-margin: 10px auto;
+$wrapper-large-breakpoint-padding: 4px;
+
+$wrapper-medium-breakpoint-width: 100%;
+$wrapper-medium-breakpoint-max-width: 700px;
+$wrapper-medium-breakpoint-margin: 0 auto;
+$wrapper-medium-breakpoint-padding: 10px;
+
+// Footer
+$footer-background-color: #2E294E;
+$footer-color: #a2a2a2;
+$footer-color-hover: #fff;
+$footer-border-color: #2c2c2c;
+$footer-max-width: 1140px;
+
+// Status Colours
+$error-color: #ea545d;
+$success-color: #27ae60;
+$warning-color: #f1c40f;
+$info-color: #3498db;
+
+// Breakpoints
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
