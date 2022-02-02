@@ -24,6 +24,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
         'registration_ip',
         'country',
+        'is_super_admin',
     ];
 
     /**
@@ -43,6 +44,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'is_super_admin' => 'boolean',
     ];
 
     /**
@@ -61,5 +63,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function projects(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Project::class);
+    }
+
+    public function isSuperAdmin(): bool
+    {
+        return $this->attributes['is_super_admin'];
     }
 }

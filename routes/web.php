@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\StatisticsController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ToggleProjectController;
 use Illuminate\Support\Facades\Auth;
@@ -50,3 +51,7 @@ Route::namespace('projects')->name('projects.')->prefix('account/projects')->gro
         Route::post('/toggle/{project}', [ToggleProjectController::class, '__invoke'])->name('toggle');
     });
 });
+
+Route::get('/admin/stats', [StatisticsController::class, '__invoke'])
+    ->name('admin.stats')
+    ->middleware(['verified', 'auth']);

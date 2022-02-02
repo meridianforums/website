@@ -32,3 +32,8 @@ Breadcrumbs::for('projects.show', function (BreadcrumbTrail $trail, \App\Models\
 Breadcrumbs::for('privacy-policy', function (BreadcrumbTrail $trail) {
     $trail->push(trans('app.privacy_policy'), route('privacy-policy'));
 });
+
+// Admin Statistics
+Breadcrumbs::for('admin.stats', function (BreadcrumbTrail $trail) {
+    $trail->push(trans('app.admin_stats'), route('admin.stats'));
+});

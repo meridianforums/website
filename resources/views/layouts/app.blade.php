@@ -69,6 +69,12 @@
                                 <i class="fa fa-project-diagram"></i>
                                 {{ trans('app.projects') }}
                             </a>
+                            @if(request()->user()->isSuperAdmin())
+                                <a href="{{ route('admin.stats') }}" title="{{ trans('app.admin_stats') }}">
+                                    <i class="fa fa-chart-line"></i>
+                                    {{ trans('app.admin_stats') }}
+                                </a>
+                            @endif
                             <a class="dropdown_content_danger" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"
                                title="{{ trans('app.sign_out') }}">
@@ -116,6 +122,13 @@
                         {{ trans('app.projects') }}
                     </a>
                 </li>
+            @if(request()->user()->isSuperAdmin())
+                    <li id="#admin_stats">
+                        <a href="{{ route('admin.stats') }}" class="mobile_main_nav_content_item">
+                            {{ trans('app.admin_stats') }}
+                        </a>
+                    </li>
+                @endif
                 <li id="#logout">
                     <a href="{{ route('logout') }}" class="mobile_main_nav_content_item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
@@ -180,6 +193,7 @@
     }
 </script>
 </body>
+@stack('scripts')
 <script>
     MicroModal.init();
 </script>

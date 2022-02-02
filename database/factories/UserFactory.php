@@ -23,6 +23,7 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'registration_ip' => $this->faker->ipv4(),
             'country' => $this->faker->countryCode(),
+            'is_super_admin' => false,
         ];
     }
 
@@ -36,6 +37,20 @@ class UserFactory extends Factory
         return $this->state(function (array $attributes) {
             return [
                 'email_verified_at' => null,
+            ];
+        });
+    }
+
+    /**
+     * Indicate that the model is a super admin.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function superAdmin(): Factory
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'is_super_admin' => true,
             ];
         });
     }
